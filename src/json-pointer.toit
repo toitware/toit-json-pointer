@@ -32,7 +32,7 @@ class JsonPointer:
   Index operator to append a segment to this JSON pointer.
   Similar to $+ but supports both string and integer segments.
   */
-  operator [] segment/any:
+  operator [] segment/any -> JsonPointer:
     if segment is string:
       return this + segment
     else if segment is int:
